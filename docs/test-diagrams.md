@@ -2,14 +2,14 @@
 
 ## A simple one
 
-``` mermaid
+``` graphviz
 graph TD
 Documentation--with diagrams-->_[is Awesome]
 ```
 
 ## A box-sizing wise complicated one
 
-``` mermaid
+``` graphviz
 classDiagram
       Animal <|-- Fish
       Animal <|-- Zebra

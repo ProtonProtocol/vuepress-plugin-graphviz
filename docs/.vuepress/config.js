@@ -1,11 +1,11 @@
 module.exports = {
-    title: 'vuepress-plugin-mermaidjs',
-    description: 'Easy Diagramming for VuePress with mermaidjs',
+    title: 'vuepress-plugin-graphviz',
+    description: 'Easy Diagramming for VuePress with graphviz',
     plugins: [
         'src/index.js'
     ],
     themeConfig: {
         search: false,
-        repo: 'eFrane/vuepress-plugin-mermaidjs'
+        repo: 'awwaiid/vuepress-plugin-graphviz'
     }
 }

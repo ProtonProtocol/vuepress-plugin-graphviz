@@ -1,22 +1,22 @@
 {
-  "name": "vuepress-plugin-mermaidjs",
+  "name": "vuepress-plugin-graphviz",
   "version": "1.6.0",
-  "description": "A Vuepress plugin providing easy MermaidJS diagramming",
+  "description": "A Vuepress plugin providing easy Graphviz diagramming",
   "main": "src/index.js",
-  "repository": "https://github.com/eFrane/vuepress-plugin-mermaidjs",
-  "author": "Stefan \"eFrane\" Graupner <efrane@meanderingsoul.com>",
+  "repository": "https://github.com/awwaiid/vuepress-plugin-graphviz",
+  "author": "Brock Wilcox <awwaiid@thelackthereof.org>",
   "license": "MIT",
-  "website": "http://vuepress-plugin-mermaidjs.efrane.com",
+  "website": "https://github.com/awwaiid/vuepress-plugin-graphviz",
   "keywords": [
     "documentation",
     "vue",
     "vuepress",
-    "mermaid",
+    "graphviz",
     "diagrams",
     "plugin"
   ],
   "dependencies": {
-    "mermaid": "^8.6.4"
+    "@aduh95/viz.js": "^3.1.0"
   },
   "devDependencies": {
     "cypress": "^4.12.1",
