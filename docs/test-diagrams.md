@@ -3,21 +3,15 @@
 ## A simple one
 
 ``` graphviz
-graph TD
-Documentation--with diagrams-->_[is Awesome]
+digraph {
+  A -> B -> C, D
+}
 ```
 
-## A box-sizing wise complicated one
+## A more complicated one
 
 ``` graphviz
-classDiagram
-      Animal <|-- Fish
-      Animal <|-- Zebra
-      Animal <|-- Duck
-      Plant <|-- Tree
-      Plant <|-- Flower
-      Plant <|-- Grass
-      Foo <|-- Bar
-      Bar <|-- Baz
-      More Width <|-- More Content
+digraph {
+  A -> B -> C, D
+}
 ```
