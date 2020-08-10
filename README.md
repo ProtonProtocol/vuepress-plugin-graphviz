@@ -43,3 +43,6 @@ a fenced code block with the language 'graphviz':
     }
     ```
 
+## Credits
+
+This work is based directly off of [](https://github.com/eFrane/vuepress-plugin-mermaidjs).
