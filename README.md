@@ -4,7 +4,7 @@
 
 This [VuePress](https://vuepress.vuejs.org) plugin provides a global component wrapping Graphviz (via [Viz.js fork by aduh95](https://github.com/aduh95/viz.js). The plugin is designed to work with VuePress v1.x.
 
-Main documentation site is at [](https://awwaiid.github.com/vuepress-plugin-graphviz).
+Main documentation site is at https://awwaiid.github.com/vuepress-plugin-graphviz.
 
 ## Installation
 
@@ -45,4 +45,4 @@ a fenced code block with the language 'graphviz':
 
 ## Credits
 
-This work is based directly off of [](https://github.com/eFrane/vuepress-plugin-mermaidjs).
+This work is based directly off of [vuepress-plugin-mermaidjs](https://github.com/eFrane/vuepress-plugin-mermaidjs).
