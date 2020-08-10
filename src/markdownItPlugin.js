@@ -2,38 +2,38 @@
 
 const { hash } = require('@vuepress/shared-utils')
 
-module.exports = function mermaidjsPlugin (md, options = {}) {
+module.exports = function graphvizPlugin (md, options = {}) {
 
-  // Handle ```mermaid blocks
+  // Handle ```graphviz blocks
   const fence = md.renderer.rules.fence
   md.renderer.rules.fence = (...args) => {
       const [tokens, idx] = args
       const { info } = tokens[idx]
-      if (info.trim(' ') === 'mermaid') {
-        return mermaidRender(tokens, idx)
+      if (info.trim(' ') === 'graphviz') {
+        return graphvizRender(tokens, idx)
       }
       const rawCode = fence(...args)
       return `${rawCode}`
   }
 
-  // Handle <mermaid> blocks
+  // Handle <graphviz> blocks
   options = options || {}
-  const openMarker = options.openMarker || '<mermaid'  // Not ending with '>' to allow attributes
+  const openMarker = options.openMarker || '<graphviz'  // Not ending with '>' to allow attributes
   const openChar = openMarker.charCodeAt(0)
-  const closeMarker = options.closeMarker || '</mermaid>'
+  const closeMarker = options.closeMarker || '</graphviz>'
   const closeChar = closeMarker.charCodeAt(0)
 
-  // Takes the context of the parsed section and turns in into a Mermaid component
-  function mermaidRender (tokens, idx, options, env, self) {
+  // Takes the context of the parsed section and turns in into a Graphviz component
+  function graphvizRender (tokens, idx, options, env, self) {
     const token = tokens[idx]
-    const key = `mermaid_${hash(idx)}`
+    const key = `graphviz_${hash(idx)}`
     const { content } = token
     md.$dataBlock[key] = content
-    return `<Mermaid id="${key}" :graph="$dataBlock.${key}"></Mermaid>`
+    return `<Graphviz id="${key}" :graph="$dataBlock.${key}"></Graphviz>`
   }
 
-  // Finds mermaid sections in the Markdown and creates context
-  function mermaidReplacer(state, startLine, endLine, silent) {
+  // Finds graphviz sections in the Markdown and creates context
+  function graphvizReplacer(state, startLine, endLine, silent) {
     let nextLine
     let i
     let autoClosed = false
@@ -119,7 +119,7 @@ module.exports = function mermaidjsPlugin (md, options = {}) {
       .slice(startLine + 1, nextLine)
       .join('\n')
 
-    const token = state.push('mermaidjs', 'fence', 0)
+    const token = state.push('graphviz', 'fence', 0)
     token.block = true
     token.info = params
     token.content = contents
@@ -132,9 +132,9 @@ module.exports = function mermaidjsPlugin (md, options = {}) {
   }
 
   // See https://markdown-it.github.io/markdown-it/#Ruler.before
-  md.block.ruler.before('fence', 'mermaidjs', mermaidReplacer, {
+  md.block.ruler.before('fence', 'graphviz', graphvizReplacer, {
     alt: ['paragraph', 'reference', 'blockquote', 'list']
   })
 
-  md.renderer.rules.mermaidjs = mermaidRender
+  md.renderer.rules.graphviz = graphvizRender
 }
