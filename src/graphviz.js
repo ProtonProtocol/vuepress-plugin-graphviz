@@ -1,6 +1,5 @@
 import Loading from './Loading.vue';
 
-
 const Graphviz = {
   name: 'Graphviz',
   props: {
@@ -33,11 +32,13 @@ const Graphviz = {
   },
   mounted () {
     window.global ||= {};
-    import("@aduh95/viz.js/dist/render_sync.js").then(
-      vizRenderStringSync => {
-        const content = this.graph || this.$el.querySelector(".graph-data").textContent;
-        this.svg = vizRenderStringSync.default(content);
-      });
+    window.process ||= {
+      "argv": [],
+      on: () => {}
+    };
+    const vizRenderStringSync = require("@aduh95/viz.js/sync");
+    const content = this.graph || this.$el.querySelector(".graph-data").textContent;
+    this.svg = vizRenderStringSync(content)
   },
   components: {
     Loading

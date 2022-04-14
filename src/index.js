@@ -1,6 +1,9 @@
 const path = require('path')
 
 module.exports = (options, ctx) => {
+  if (typeof window !== "undefined")
+    window.global = window;
+    
   return {
     chainMarkdown (config) {
       config
