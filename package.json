@@ -1,6 +1,6 @@
 {
   "name": "@proton/vuepress-plugin-graphviz",
-  "version": "2.0.8",
+  "version": "2.1.0",
   "description": "A Vuepress plugin providing easy Graphviz diagramming",
   "main": "src/index.js",
   "repository": "https://github.com/awwaiid/vuepress-plugin-graphviz",
@@ -16,7 +16,8 @@
     "plugin"
   ],
   "dependencies": {
-    "@aduh95/viz.js": "^3.1.0"
+    "@aduh95/viz.js": "^3.5.0",
+    "@vuepress/shared-utils": "^1.9.7"
   },
   "devDependencies": {
     "vuepress": "^1.5.3"
